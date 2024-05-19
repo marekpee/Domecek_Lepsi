@@ -1,0 +1,27 @@
+﻿<h1>Domecek</h1>
+
+<button @onclick="PridejObrazec">dfs</button>
+
+<svg width="@SvgWidth" height="@SvgHeight" xmlns="http://www.w3.org/2000/svg">
+    @foreach (var item in ObrazceList)
+    {
+        switch (item)
+        {
+            case Models.Obdelnik obdelnik:
+                <rect width="@obdelnik.StranaA" height="@obdelnik.StranaB" x="@obdelnik.PozX" y="@obdelnik.PozY" fill="blue" />
+                break;
+            case Models.Ctverec ctverec:
+                <rect width="@ctverec.StranaA" height="@ctverec.StranaA" x="@ctverec.PozX" y="@ctverec.PozY" fill="red" />
+                break;
+        }
+    }
+</svg>
+
+<hr />
+
+<button @onclick="PosunDoprava">Doprava</button>
+<button @onclick="PosunDoleva">Doleva</button>
+
+@code {
+
+}
